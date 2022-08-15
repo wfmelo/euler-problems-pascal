@@ -60,5 +60,5 @@ begin
       end;
       i := i - 1;
    end;
-   writeln('result: ', result, ' a: ', a, ' b:', b);
+   writeln('Answer is: ', result, ' a: ', a, ' b:', b);
 end.
