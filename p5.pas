@@ -15,7 +15,7 @@ function DetermineGcd (a : qword; b : integer) : integer;
 var
    t :  integer;
 begin
-   bwhile (a > 0) do begin
+   while (a > 0) do begin
       if (a < b) then begin t := a; a := b; b := t; end;
       a := a mod b;
    end;
