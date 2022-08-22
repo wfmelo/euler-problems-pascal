@@ -62,7 +62,7 @@ var
    maximum     : longint = 0;
    diagonallyL : longint = 0;
    diagonallyR : longint = 0;
-   row          : longint = 0;
+   row         : longint = 0;
    col         : longint = 0;
 begin
    create_array();
