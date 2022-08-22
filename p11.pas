@@ -62,10 +62,8 @@ var
    maximum     : longint = 0;
    diagonallyL : longint = 0;
    diagonallyR : longint = 0;
-   up          : longint = 0;
-   down        : longint = 0;
-   left        : longint = 0;
-   right       : longint = 0;
+   row          : longint = 0;
+   col         : longint = 0;
 begin
    create_array();
    for i:= 0 to n - 1 do begin
@@ -74,21 +72,15 @@ begin
             diagonallyL := a[i][j] * a[i+1][j+1] * a[i+2][j+2] * a[i+3][j+3];
             diagonallyR := a[i][j+3] * a[i+1][j+2] * a[i+2][j+1] * a[i+3][j];
          end;
-         if (i >= size - 1) and (i < n) then
-            up := a[i][j] * a[i-1][j] * a[i-2][j] * a[i-3][j];
          if (i <= n - size) then
-            down := a[i][j] * a[i+1][j] * a[i+2][j] * a[i+3][j];
-         if (j >= size - 1) then
-            left := a[i][j] * a[i][j-1] * a[i][j-2] * a[i][j-3];
+            col := a[i][j] * a[i+1][j] * a[i+2][j] * a[i+3][j];
          if (j <= n - size) then
-            right := a[i][j] * a[i][j+1] * a[i][j+2] * a[i][j+3];
+            row := a[i][j] * a[i][j+1] * a[i][j+2] * a[i][j+3];
          
          maximum := max(diagonallyL, maximum);
          maximum := max(diagonallyR, maximum);
-         maximum := max(up, maximum);
-         maximum := max(down, maximum);
-         maximum := max(left, maximum);
-         maximum := max(right, maximum);
+         maximum := max(col, maximum);
+         maximum := max(row, maximum);
       end;
    end;
 
