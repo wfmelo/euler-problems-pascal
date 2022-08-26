@@ -48,7 +48,6 @@ begin
       triangle := triangle + i;
       i        := i + 1;
       count    := count_factors(triangle);
-      writeln('t: ', triangle, ' i: ', i, ' c: ', count);
    until not (count < divisors);
    
    writeln('Answer is: ', triangle);
