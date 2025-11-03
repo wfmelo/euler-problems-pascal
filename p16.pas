@@ -8,21 +8,13 @@
 
 program p16;
 
-uses math, strutils;
+uses math;
 
 const n = 1000;
 
 type IntegerArray = record data   : array of Integer;
                            length : integer;
                     end;
-                       
-procedure print_array(arr : IntegerArray);
-var
-   i : integer;
-begin
-   for i := arr.length - 1 downto 0 do
-      write(arr.data[i]);
-end;
 
 function multiply(arr : IntegerArray; x : integer) : integer;
 var
